@@ -1,6 +1,6 @@
 # Hydrogen Demo Store
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4dc5eedd-4946-48d1-886a-fd54006b3dc9/deploy-status?branch=main)](https://app.netlify.com/sites/estate98/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4dc5eedd-4946-48d1-886a-fd54006b3dc9/deploy-status?branch=main)](https://app.netlify.com/sites/estate98/deploys?branch=main)
 
 Hydrogen is a React framework and SDK that you can use to build fast and dynamic Shopify custom storefronts.
 
