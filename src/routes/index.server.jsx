@@ -61,6 +61,7 @@ function HomepageContent() {
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
+      <Hero {...primaryHero} pickedByHand height="full" top loading="eager" />
       <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
@@ -138,6 +139,21 @@ const HOMEPAGE_CONTENT_QUERY = gql`
           value
         }
         spread: metafield(namespace: "hero", key: "spread") {
+          reference {
+            ...Media
+          }
+        }
+        bottle: metafield(namespace: "hero", key: "bottle") {
+          reference {
+            ...Media
+          }
+        }
+        pickBg: metafield(namespace: "hero", key: "pickbg") {
+          reference {
+            ...Media
+          }
+        }
+        stamp: metafield(namespace: "hero", key: "stamp") {
           reference {
             ...Media
           }

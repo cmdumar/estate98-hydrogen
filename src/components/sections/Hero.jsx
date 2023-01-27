@@ -1,22 +1,36 @@
-import {Image, Link, Video} from '@shopify/hydrogen';
+import {Image} from '@shopify/hydrogen';
 
-import {Heading, Text} from '~/components';
+import {Heading} from '~/components';
 
 export function Hero({
-  byline,
-  cta,
-  handle,
+  // byline,
+  // cta,
   heading,
   height,
   loading,
-  spread,
-  spreadSecondary,
+  // spread,
+  bottle,
   top,
+  // pickBg,
+  stamp,
+  pickedByHand = false,
 }) {
+  // console.log('Picked', pickedByHand);
+
+  // console.log('Picked Bg', pickBg);
+
+  // const pickedBg = pickBg?.reference.image.url;
+
+  // const bg = pickedByHand
+  //   ? 'https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero.jpg?v=1674774427'
+  //   : 'https://cdn.shopify.com/s/files/1/0712/2793/2978/files/pickedByHand.jpg?v=1674826797';
+
+  // console.log('Picked Bg URl', pickedBg);
+
   return (
-    <Link to={`/collections/${handle}`}>
+    <>
       <section
-        className={`relative justify-end flex flex-col w-full ${
+        className={`relative flex flex-col w-full justify-center ${
           top && '-mt-nav'
         } ${
           height === 'full'
@@ -25,39 +39,35 @@ export function Hero({
         }`}
       >
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
-          {spread?.reference && (
-            <div className="">
-              <SpreadMedia
-                scale={2}
-                sizes={
-                  spreadSecondary?.reference
-                    ? '(min-width: 80em) 700px, (min-width: 48em) 450px, 500px'
-                    : '(min-width: 80em) 1400px, (min-width: 48em) 900px, 500px'
-                }
-                widths={
-                  spreadSecondary?.reference
-                    ? [500, 450, 700]
-                    : [500, 900, 1400]
-                }
-                width={spreadSecondary?.reference ? 375 : 750}
-                data={spread.reference}
-                loading={loading}
-              />
-            </div>
-          )}
-          {spreadSecondary?.reference && (
-            <div className="hidden md:block">
-              <SpreadMedia
-                sizes="(min-width: 80em) 700, (min-width: 48em) 450, 500"
-                widths={[450, 700]}
-                width={375}
-                data={spreadSecondary.reference}
-              />
-            </div>
+          {!pickedByHand ? (
+            <div
+              className={`
+              bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero.jpg?v=1674774427)]
+              bg-center
+              bg-cover
+              bg-no-repeat`}
+            ></div>
+          ) : (
+            <div
+              className={`
+            bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/pickedByHand.jpg?v=1674826797)]
+            bg-center
+            bg-cover
+            bg-no-repeat`}
+            ></div>
           )}
         </div>
-        <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
-          {heading?.value && (
+        {!pickedByHand ? (
+          <div
+            className="flex
+        justify-center
+        items-center
+        dark:from-contrast/60 
+        dark:text-primary 
+        from-primary/60 
+        text-contrast"
+          >
+            {/* {heading?.value && (
             <Heading format as="h2" size="display" className="max-w-md">
               {heading.value}
             </Heading>
@@ -67,45 +77,121 @@ export function Hero({
               {byline.value}
             </Text>
           )}
-          {cta?.value && <Text size="lead">{cta.value}</Text>}
-        </div>
+          {cta?.value && <Text size="lead">{cta.value}</Text>} */}
+            <div>
+              {heading?.value && (
+                <Heading
+                  format
+                  as="h3"
+                  size="display"
+                  className="max-w-md text-center drop-shadow-md"
+                >
+                  Grown at peak elevation
+                </Heading>
+              )}
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <div className="">
+                {bottle?.reference && (
+                  <Image
+                    // widths={widths}
+                    // sizes={sizes}
+                    // alt={data.alt || 'Marketing Banner Image'}
+                    className="block object-cover w-[250px]"
+                    data={bottle.reference.image}
+                    loading={loading}
+                    // width={width}
+                    // loaderOptions={{scale, crop: 'center'}}
+                  />
+                )}
+              </div>
+              {/* <Button className="w-fit rounded-lg bg-slate-900">
+              Shop
+            </Button> */}
+              <button className="inline-block rounded-lg font-medium text-center py-3 px-6 bg-[#AA3322]">
+                Shop
+              </button>
+            </div>
+            <div>
+              {heading?.value && (
+                <Heading
+                  format
+                  as="h3"
+                  size="display"
+                  className="max-w-md text-center drop-shadow-md"
+                >
+                  On rich volcanic soil
+                </Heading>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div className="flex justify-start gap-2 items-baseline">
+            <div className="self-end">
+              {stamp?.reference && (
+                <Image
+                  // widths={widths}
+                  // sizes={sizes}
+                  // alt={data.alt || 'Marketing Banner Image'}
+                  className="block object-cover w-[250px]"
+                  data={stamp.reference.image}
+                  loading={loading}
+                  // width={width}
+                  // loaderOptions={{scale, crop: 'center'}}
+                />
+              )}
+            </div>
+            <div className="ml-6 self-end">
+              <Heading
+                format
+                as="h3"
+                size="display"
+                className="text-left drop-shadow-md"
+              >
+                PICKED BY HAND FOR SIX GENERATIONS.
+              </Heading>
+              <button className="inline-block rounded-lg font-medium text-center mt-6 py-3 px-6 bg-[#AA3322]">
+                Play The Visual Story
+              </button>
+            </div>
+          </div>
+        )}
       </section>
-    </Link>
+    </>
   );
 }
 
-function SpreadMedia({data, loading, scale, sizes, width, widths}) {
-  if (data.mediaContentType === 'VIDEO') {
-    return (
-      <Video
-        previewImageOptions={{scale, src: data.previewImage.url}}
-        width={scale * width}
-        className="block object-cover w-full h-full"
-        data={data}
-        controls={false}
-        muted
-        loop
-        playsInline
-        autoPlay
-      />
-    );
-  }
+// function SpreadMedia({data, loading, scale, sizes, width, widths}) {
+//   if (data.mediaContentType === 'VIDEO') {
+//     return (
+//       <Video
+//         previewImageOptions={{scale, src: data.previewImage.url}}
+//         width={scale * width}
+//         className="block object-cover w-full h-full"
+//         data={data}
+//         controls={false}
+//         muted
+//         loop
+//         playsInline
+//         autoPlay
+//       />
+//     );
+//   }
 
-  if (data.mediaContentType === 'IMAGE') {
-    return (
-      <Image
-        widths={widths}
-        sizes={sizes}
-        alt={data.alt || 'Marketing Banner Image'}
-        className="block object-cover w-full h-full"
-        // @ts-ignore
-        data={data.image}
-        loading={loading}
-        width={width}
-        loaderOptions={{scale, crop: 'center'}}
-      />
-    );
-  }
+//   if (data.mediaContentType === 'IMAGE') {
+//     return (
+//       <Image
+//         widths={widths}
+//         sizes={sizes}
+//         alt={data.alt || 'Marketing Banner Image'}
+//         className="block object-cover w-full h-full"
+//         data={data.image}
+//         loading={loading}
+//         width={width}
+//         loaderOptions={{scale, crop: 'center'}}
+//       />
+//     );
+//   }
 
-  return null;
-}
+//   return null;
+// }
