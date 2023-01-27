@@ -130,11 +130,11 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
       'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5',
     container: `${
       isHome
-        ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
+        ? 'bg-transparent text-contrast dark:text-primary'
         : 'bg-contrast/80 text-primary'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''
-    }hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`,
+    }hidden h-nav lg:flex items-center sticky transition duration-300 z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`,
   };
 
   return (
@@ -143,7 +143,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         <Link className={`font-bold`} to="/">
           {title}
         </Link>
-        <nav className="flex gap-8">
+        <nav className="flex justify-center gap-8">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
             <Link key={item.id} to={item.to} target={item.target}>
@@ -153,28 +153,6 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         </nav>
       </div>
       <div className="flex items-center gap-1">
-        <form
-          action={`/${countryCode ? countryCode + '/' : ''}search`}
-          className="flex items-center gap-2"
-        >
-          <Input
-            className={
-              isHome
-                ? 'focus:border-contrast/20 dark:focus:border-primary/20'
-                : 'focus:border-primary/20'
-            }
-            type="search"
-            variant="minisearch"
-            placeholder="Search"
-            name="q"
-          />
-          <button type="submit" className={styles.button}>
-            <IconSearch />
-          </button>
-        </form>
-        <Link to={'/account'} className={styles.button}>
-          <IconAccount />
-        </Link>
         <button onClick={openCart} className={styles.button}>
           <IconBag />
           <CartBadge dark={isHome} />
