@@ -11,3 +11,17 @@
   font-style: italic;
   src: url('/fonts/IBMPlexSerif-TextItalic.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'trixie-text-regular';
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/Trixie-Text.otf');
+}
+
+@font-face {
+  font-family: 'alternategotno1d-regular';
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/AlternateGotNo1D.ttf');
+}

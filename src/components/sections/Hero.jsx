@@ -1,5 +1,4 @@
 import {Image} from '@shopify/hydrogen';
-
 import {Heading} from '~/components';
 
 export function Hero({
@@ -45,7 +44,8 @@ export function Hero({
               bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero.jpg?v=1674774427)]
               bg-center
               bg-cover
-              bg-no-repeat`}
+              bg-no-repeat
+              h-screen`}
             ></div>
           ) : (
             <div
@@ -53,7 +53,8 @@ export function Hero({
             bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/pickedByHand.jpg?v=1674826797)]
             bg-center
             bg-cover
-            bg-no-repeat`}
+            bg-no-repeat
+            h-screen`}
             ></div>
           )}
         </div>
