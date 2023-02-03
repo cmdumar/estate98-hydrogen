@@ -12,7 +12,7 @@ import {
 
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
-import {FeaturedCollections, Hero, Esencia } from '~/components';
+import {FeaturedCollections, Hero, Esencia, Process } from '~/components';
 import {Layout, ProductSwimlane} from '~/components/index.server';
 
 export default function Homepage() {
@@ -64,12 +64,13 @@ function HomepageContent() {
       )}
       <Esencia />
       <Hero {...primaryHero} pickedByHand height="full" top loading="eager" />
+      <Process {...process} height="full" loading="eager" />
 
-      <ProductSwimlane
+      {/* <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
         divider="bottom"
-      />
+      /> */}
       
       
       {secondaryHero && <Hero {...secondaryHero} />}
@@ -163,6 +164,46 @@ const HOMEPAGE_CONTENT_QUERY = gql`
             ...Media
           }
         }
+        process1: metafield(namespace: "hero", key: "process1") {
+          reference {
+            ...Media
+          }
+        } 
+        # process2: metafield(namespace: "process", key: "process2") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
+        # process3: metafield(namespace: "process", key: "process3") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
+        # process4: metafield(namespace: "process", key: "process4") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
+        # process5: metafield(namespace: "process", key: "process5") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
+        # process6: metafield(namespace: "process", key: "process6") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
+        # process7: metafield(namespace: "process", key: "process7") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
+        # process8: metafield(namespace: "process", key: "process8") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
         spreadSecondary: metafield(namespace: "hero", key: "spread_secondary") {
           reference {
             ...Media
