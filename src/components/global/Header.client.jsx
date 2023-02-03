@@ -122,7 +122,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
   );
 }
 
-function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
+function DesktopHeader({isHome, menu, openCart, title}) {
   const {y} = useWindowScroll();
 
   const styles = {
@@ -134,29 +134,35 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         : 'bg-contrast/80 text-primary'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''
-    }hidden h-nav lg:flex items-center sticky transition duration-300 z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`,
+    }hidden h-nav lg:flex items-center transition duration-300 z-40 top-0 justify-center w-full leading-none gap-8 px-12 py-8`,
   };
 
   return (
     <header role="banner" className={styles.container}>
-      <div className="flex gap-12">
-        <Link className={`font-bold`} to="/">
+      <div className="flex justify-center w-full items-center">
+        <Link className="font-bold mr-auto" to="/">
           {title}
         </Link>
-        <nav className="flex justify-center gap-8">
+        <nav className="flex gap-8">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
-            <Link key={item.id} to={item.to} target={item.target}>
+            <Link
+              key={item.id}
+              className="text-black text-2xl uppercase font-alternate"
+              to={item.to}
+              target={item.target}
+            >
               {item.title}
             </Link>
           ))}
         </nav>
-      </div>
-      <div className="flex items-center gap-1">
-        <button onClick={openCart} className={styles.button}>
-          <IconBag />
-          <CartBadge dark={isHome} />
-        </button>
+        <div className="flex items-center gap-1 ml-auto">
+          <button onClick={openCart} className={styles.button}>
+            <IconBag />
+            <CartBadge dark={isHome} />
+          </button>
+          <p className="font-alternate uppercase">Returning customers</p>
+        </div>
       </div>
     </header>
   );
