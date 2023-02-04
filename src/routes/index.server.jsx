@@ -13,7 +13,7 @@ import {
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {FeaturedCollections, Hero, Esencia, Process } from '~/components';
-import {Layout, ProductSwimlane} from '~/components/index.server';
+import {Layout} from '~/components/index.server';
 
 export default function Homepage() {
   useServerAnalytics({
@@ -64,7 +64,7 @@ function HomepageContent() {
       )}
       <Esencia />
       <Hero {...primaryHero} pickedByHand height="full" top loading="eager" />
-      <Process {...process} height="full" loading="eager" />
+      <Process height="full" loading="eager" />
 
       {/* <ProductSwimlane
         data={featuredProducts.nodes}
@@ -164,11 +164,11 @@ const HOMEPAGE_CONTENT_QUERY = gql`
             ...Media
           }
         }
-        process1: metafield(namespace: "hero", key: "process1") {
-          reference {
-            ...Media
-          }
-        } 
+        # process1: metafield(namespace: "hero", key: "process1") {
+        #   reference {
+        #     ...Media
+        #   }
+        # } 
         # process2: metafield(namespace: "process", key: "process2") {
         #   reference {
         #     ...Media

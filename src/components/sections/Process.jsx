@@ -1,10 +1,8 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import HoverVideoPlayer from 'react-hover-video-player';
-import { Image } from '@shopify/hydrogen';
 
-export function Process({}) {
+export function Process() {
   return (
     <div className='min-h-screen'>
         {/* video-grid */}
