@@ -50,7 +50,7 @@ function HomepageContent() {
     preload: true,
   });
 
-  const {heroBanners, featuredCollections, featuredProducts} = data;
+  const {heroBanners, featuredCollections} = data;
 
   // fill in the hero banners with placeholders if they're missing
   const [primaryHero, secondaryHero, tertiaryHero] = getHeroPlaceholder(
@@ -64,7 +64,7 @@ function HomepageContent() {
       )}
       <Esencia />
       <Hero {...primaryHero} pickedByHand height="full" top loading="eager" />
-      <Process height="full" loading="eager" />
+      <Process {...primaryHero} height="full" loading="eager" />
 
       {/* <ProductSwimlane
         data={featuredProducts.nodes}
@@ -154,6 +154,11 @@ const HOMEPAGE_CONTENT_QUERY = gql`
             ...Media
           }
         }
+        process1: metafield(namespace: "hero", key: "process1") {
+          reference {
+            ...Media
+          }
+        }
         pickBg: metafield(namespace: "hero", key: "pickbg") {
           reference {
             ...Media
@@ -164,11 +169,21 @@ const HOMEPAGE_CONTENT_QUERY = gql`
             ...Media
           }
         }
-        # process1: metafield(namespace: "hero", key: "process1") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
+        coffeleaves: metafield(namespace: "hero", key: "coffeleaves") {
+          reference {
+            ...Media
+          }
+        }
+        coffeebeverage: metafield(namespace: "hero", key: "coffeebeverage") {
+          reference {
+            ...Media
+          }
+        }
+        video1: metafield(namespace: "process", key: "video1") {
+          reference {
+            ...Media
+          }
+        }
         # process2: metafield(namespace: "process", key: "process2") {
         #   reference {
         #     ...Media
