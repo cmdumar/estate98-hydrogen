@@ -1,10 +1,17 @@
 import clsx from 'clsx';
 
-function Icon({children, className, fill = 'currentColor', stroke, ...props}) {
+function Icon({
+  children,
+  className,
+  fill = 'currentColor',
+  viewBox = '0 0 20 20',
+  stroke,
+  ...props
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
+      viewBox={viewBox}
       {...props}
       fill={fill}
       stroke={stroke}
@@ -22,6 +29,94 @@ export function IconMenu(props) {
       <line x1="3" y1="6.375" x2="17" y2="6.375" strokeWidth="1.25" />
       <line x1="3" y1="10.375" x2="17" y2="10.375" strokeWidth="1.25" />
       <line x1="3" y1="14.375" x2="17" y2="14.375" strokeWidth="1.25" />
+    </Icon>
+  );
+}
+
+export function IconCartBag(props) {
+  return (
+    <Icon {...props}>
+      <title>Shopping Bag</title>
+      <path
+        d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3 6H21"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Icon>
+  );
+}
+
+export function IconFacebook(props) {
+  return (
+    <Icon {...props}>
+      <title>Facebook</title>
+      <path
+        d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Icon>
+  );
+}
+
+export function IconInstagram(props) {
+  return (
+    <Icon {...props}>
+      <title>Instagram</title>
+      <path
+        d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16 11.3703C16.1234 12.2025 15.9813 13.0525 15.5938 13.7993C15.2063 14.5461 14.5931 15.1517 13.8416 15.53C13.0901 15.9082 12.2384 16.0399 11.4078 15.9062C10.5771 15.7726 9.80976 15.3804 9.21484 14.7855C8.61991 14.1905 8.22773 13.4232 8.09406 12.5925C7.9604 11.7619 8.09206 10.9102 8.47032 10.1587C8.84858 9.40716 9.45418 8.79404 10.201 8.40654C10.9478 8.01904 11.7978 7.87689 12.63 8.0003C13.4789 8.12619 14.2648 8.52176 14.8717 9.12861C15.4785 9.73545 15.8741 10.5214 16 11.3703Z"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.5 6.5H17.51"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Icon>
+  );
+}
+
+export function IconTwitter(props) {
+  return (
+    <Icon {...props}>
+      <title>Twitter</title>
+      <path
+        d="M23 3.00029C22.0424 3.67577 20.9821 4.1924 19.86 4.53029C19.2577 3.8378 18.4573 3.34698 17.567 3.12422C16.6767 2.90145 15.7395 2.95749 14.8821 3.28474C14.0247 3.612 13.2884 4.19469 12.773 4.95401C12.2575 5.71332 11.9877 6.61263 12 7.53029V8.53029C10.2426 8.57586 8.50127 8.1861 6.93101 7.39574C5.36074 6.60537 4.01032 5.43893 3 4.00029C3 4.00029 -1 13.0003 8 17.0003C5.94053 18.3983 3.48716 19.0992 1 19.0003C10 24.0003 21 19.0003 21 7.50029C20.9991 7.22174 20.9723 6.94388 20.92 6.67029C21.9406 5.66378 22.6608 4.393 23 3.00029V3.00029Z"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </Icon>
   );
 }
