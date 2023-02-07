@@ -169,7 +169,7 @@ const HOMEPAGE_CONTENT_QUERY = gql`
             ...Media
           }
         }
-        coffeleaves: metafield(namespace: "hero", key: "coffeleaves") {
+        coffeeleaves: metafield(namespace: "hero", key: "coffeeleaves") {
           reference {
             ...Media
           }
