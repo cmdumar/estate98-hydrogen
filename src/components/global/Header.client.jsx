@@ -132,7 +132,7 @@ function DesktopHeader({isHome, menu, openCart}) {
     container: `${
       isHome
         ? 'bg-transparent text-contrast dark:text-primary'
-        : 'bg-contrast/80 text-primary'
+        : 'bg-transparent text-contrast'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''
     }hidden h-nav lg:flex items-center transition duration-300 z-40 top-0 justify-center w-full leading-none gap-8 px-10`,

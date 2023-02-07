@@ -13,10 +13,10 @@ const SHOP_NAME_FALLBACK = 'Hydrogen';
 /**
  * A server component that defines a structure and organization of a page that can be used in different parts of the Hydrogen app
  */
-export function Layout({children}) {
+export function Layout({children, bg = ''}) {
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className={`flex flex-col min-h-screen ${bg}`}>
         <div className="">
           <a href="#mainContent" className="sr-only">
             Skip to content
