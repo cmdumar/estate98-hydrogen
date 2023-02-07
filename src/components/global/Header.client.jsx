@@ -1,12 +1,12 @@
-import {Link, useUrl, useCart} from '@shopify/hydrogen';
+import {Link, useUrl, Image} from '@shopify/hydrogen';
 import {useWindowScroll} from 'react-use';
 
 import {
   Heading,
   IconAccount,
-  IconBag,
   IconMenu,
   IconSearch,
+  IconCartBag,
   Input,
 } from '~/components';
 
@@ -114,34 +114,41 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
           <IconAccount />
         </Link>
         <button onClick={openCart} className={styles.button}>
-          <IconBag />
-          <CartBadge dark={isHome} />
+          <div className="border-2 rounded-full p-4">
+            <IconCartBag fill="none" viewBox="0 0 24 24" />
+          </div>
         </button>
       </div>
     </header>
   );
 }
 
-function DesktopHeader({isHome, menu, openCart, title}) {
+function DesktopHeader({isHome, menu, openCart}) {
   const {y} = useWindowScroll();
 
   const styles = {
     button:
-      'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5',
+      'relative flex items-center justify-center mr-2 rounded-full bg-[rgba(151,49,34,0.8)] p-4',
     container: `${
       isHome
         ? 'bg-transparent text-contrast dark:text-primary'
         : 'bg-contrast/80 text-primary'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''
-    }hidden h-nav lg:flex items-center transition duration-300 z-40 top-0 justify-center w-full leading-none gap-8 px-12 py-8`,
+    }hidden h-nav lg:flex items-center transition duration-300 z-40 top-0 justify-center w-full leading-none gap-8 px-10`,
   };
 
   return (
     <header role="banner" className={styles.container}>
-      <div className="flex justify-center w-full items-center">
+      <div className="flex justify-center w-full items-center mt-10">
         <Link className="font-bold mr-auto" to="/">
-          {title}
+          <Image
+            src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/estate98-logo.png?v=1675426429"
+            alt="Logo"
+            width={180}
+            height={100}
+            className="max-w-full"
+          />
         </Link>
         <nav className="flex gap-8">
           {/* Top level menu items */}
@@ -158,31 +165,13 @@ function DesktopHeader({isHome, menu, openCart, title}) {
         </nav>
         <div className="flex items-center gap-1 ml-auto">
           <button onClick={openCart} className={styles.button}>
-            <IconBag />
-            <CartBadge dark={isHome} />
+            <IconCartBag fill="none" viewBox="0 0 24 24" />
           </button>
-          <p className="font-alternate uppercase">Returning customers</p>
+          <p className="font-alternate uppercase text-2xl border-b-2 border-b-[#B59357]">
+            Returning customers
+          </p>
         </div>
       </div>
     </header>
-  );
-}
-
-function CartBadge({dark}) {
-  const {totalQuantity} = useCart();
-
-  if (totalQuantity < 1) {
-    return null;
-  }
-  return (
-    <div
-      className={`${
-        dark
-          ? 'text-primary bg-contrast dark:text-contrast dark:bg-primary'
-          : 'text-contrast bg-primary'
-      } absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px`}
-    >
-      <span>{totalQuantity}</span>
-    </div>
   );
 }
