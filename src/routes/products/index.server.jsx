@@ -1,51 +1,50 @@
 import {Suspense} from 'react';
-import {useShopQuery, gql, useLocalization, Seo} from '@shopify/hydrogen';
+import {gql, Seo} from '@shopify/hydrogen';
 
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
-import {ProductGrid, PageHeader, Section} from '~/components';
+import {Section, SectionOne} from '~/components';
 import {Layout} from '~/components/index.server';
 
 export default function AllProducts() {
   return (
-    <Layout>
+    <Layout bg="bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Esencia-bg-min.jpg?v=1675160778)]">
       <Seo type="page" data={{title: 'All Products'}} />
-      <PageHeader heading="All Products" variant="allCollections" />
       <Section>
         <Suspense>
-          <AllProductsGrid />
+          <SectionOne />
         </Suspense>
       </Section>
     </Layout>
   );
 }
 
-function AllProductsGrid() {
-  const {
-    language: {isoCode: languageCode},
-    country: {isoCode: countryCode},
-  } = useLocalization();
+// function AllProductsGrid() {
+//   const {
+//     language: {isoCode: languageCode},
+//     country: {isoCode: countryCode},
+//   } = useLocalization();
 
-  const {data} = useShopQuery({
-    query: ALL_PRODUCTS_QUERY,
-    variables: {
-      country: countryCode,
-      language: languageCode,
-      pageBy: PAGINATION_SIZE,
-    },
-    preload: true,
-  });
+//   const {data} = useShopQuery({
+//     query: ALL_PRODUCTS_QUERY,
+//     variables: {
+//       country: countryCode,
+//       language: languageCode,
+//       pageBy: PAGINATION_SIZE,
+//     },
+//     preload: true,
+//   });
 
-  const products = data.products;
+//   const products = data.products;
 
-  return (
-    <ProductGrid
-      key="products"
-      url={`/products?country=${countryCode}`}
-      collection={{products}}
-    />
-  );
-}
+//   return (
+//     <ProductGrid
+//       key="products"
+//       url={`/products?country=${countryCode}`}
+//       collection={{products}}
+//     />
+//   );
+// }
 
 // API to paginate products
 // @see templates/demo-store/src/components/product/ProductGrid.client.tsx
