@@ -60,19 +60,11 @@ function HomepageContent() {
   return (
     <>
       {primaryHero && (
-        <Hero {...primaryHero} height="full" top loading="eager" />
+        <Hero {...primaryHero} top loading="eager" />
       )}
       <Esencia />
-      <Hero {...primaryHero} pickedByHand height="full" top loading="eager" />
+      <Hero {...primaryHero} pickedByHand loading="eager" />
       <Process {...primaryHero} height="full" loading="eager" />
-
-      {/* <ProductSwimlane
-        data={featuredProducts.nodes}
-        title="Featured Products"
-        divider="bottom"
-      /> */}
-      
-      
       {secondaryHero && <Hero {...secondaryHero} />}
       <FeaturedCollections
         data={featuredCollections.nodes}
@@ -183,42 +175,7 @@ const HOMEPAGE_CONTENT_QUERY = gql`
           reference {
             ...Media
           }
-        }
-        # process2: metafield(namespace: "process", key: "process2") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
-        # process3: metafield(namespace: "process", key: "process3") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
-        # process4: metafield(namespace: "process", key: "process4") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
-        # process5: metafield(namespace: "process", key: "process5") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
-        # process6: metafield(namespace: "process", key: "process6") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
-        # process7: metafield(namespace: "process", key: "process7") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
-        # process8: metafield(namespace: "process", key: "process8") {
-        #   reference {
-        #     ...Media
-        #   }
-        # } 
+        } 
         spreadSecondary: metafield(namespace: "hero", key: "spread_secondary") {
           reference {
             ...Media
