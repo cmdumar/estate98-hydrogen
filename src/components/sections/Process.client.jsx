@@ -8,12 +8,8 @@ import { Image, Video } from '@shopify/hydrogen';
 export function Process({ 
     video1,
     coffeeleaves,
-    coffeebeverage
+    // coffeebeverage
 }) {
-    // // console.log("Process data", process1);
-    // console.log("Process data", coffeeleaves);
-    // console.log("Process data", coffeebeverage);
-    // // console.log(process1.reference.image);
 
 
   return (
@@ -24,21 +20,19 @@ export function Process({
         bg-cover
     `}>
         {/* video-grid */}
-        <div className="max-w-7xl mx-auto mt-12">
-            <h1 className='text-center text-black font-alternate my-12 text-5xl'>OUR PROCESS</h1>
-            <div className="grid grid-cols-3 place-items-center grid-rows-3 gap-4">
+        <div className="max-w-7xl mx-auto pt-12">
+            <h1 className='text-center text-black font-alternate mb-10 text-5xl'>OUR PROCESS</h1>
+            <div className="grid grid-cols-3 place-items-center grid-rows-3 gap-2">
                 <div className={`
                     relative
-                    bg-center
-                    bg-cover
                     grayscale 
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700 
-                    min-h-full w-full
                     order-1
                 `}>
                     <Video
+                        className='w-full h-full'
                         data={video1.reference}
                         controls={false}
                         onMouseOver={event => event.target.play()}
@@ -193,7 +187,7 @@ export function Process({
             </div>
         </div>
 
-        <div className='relative min-h-screen max-w-[100%] flex justify-start mt-24 ml-24 mb-28'>
+        <div className='relative min-h-screen max-w-[100%] flex justify-start mt-24 ml-24 pb-10'>
             <div className='flex gap-16 w-2/4 flex-wrap ml-24'>
                 <div className="w-72">
                     <h3 className='font-alternate text-2xl text-[#AA3322]'>IMPACT-CONSCIOUS SOURCING</h3>
