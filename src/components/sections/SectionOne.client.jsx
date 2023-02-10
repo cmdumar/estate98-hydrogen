@@ -3,7 +3,7 @@ import {Heading, Text} from '~/components';
 
 export const SectionOne = () => {
   return (
-    <section>
+    <section className="mt-10">
       <Heading className="font-alternate text-6xl text-center text-contrast uppercase mb-16">
         Come, become a <span style={{color: '#973122'}}>part</span> of our
         family

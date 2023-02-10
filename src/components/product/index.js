@@ -3,4 +3,4 @@ export {ProductGallery} from './ProductGallery.client';
 export {ProductGrid} from './ProductGrid.client';
 export {ProductDetail} from './ProductDetail.client';
 export {ProductOptions} from './ProductOptions.client';
-export {SectionOne} from './SectionOne.client';
+export {SectionOne} from '../sections/SectionOne.client';
