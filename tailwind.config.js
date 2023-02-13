@@ -18,6 +18,12 @@ module.exports = {
         primary: withOpacityValue('--color-primary'),
         contrast: withOpacityValue('--color-contrast'),
         notice: withOpacityValue('--color-accent'),
+        theme: 'var(--color-theme)',
+        khaki: 'var(--color-khaki)',
+        offgrey: 'var(--color-lightgrey)',
+        offwhite: 'var(--color-dullwhite)',
+        dark: 'var(--color-black)',
+        light: 'var(--color-white)',
         shopPay: 'var(--color-shop-pay)',
       },
       screens: {
@@ -50,7 +56,7 @@ module.exports = {
         sans: ['Helvetica Neue', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['"IBMPlexSerif"', 'Palatino', 'ui-serif'],
         trixie: ['trixie-text-regular', 'sans-serif'],
-        alternate: ['alternategotno1d-regular', 'sans-serif']
+        alternate: ['alternategotno1d-regular', 'sans-serif'],
       },
       fontSize: {
         display: ['var(--font-size-display)', '1.1'],

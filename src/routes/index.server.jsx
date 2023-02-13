@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+
 import {Suspense} from 'react';
 import {
   CacheLong,
@@ -12,7 +13,7 @@ import {
 
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
-import {FeaturedCollections, Hero, Esencia, Process } from '~/components';
+import {FeaturedCollections, Hero, Esencia, Process, Values} from '~/components';
 import {Layout} from '~/components/index.server';
 
 export default function Homepage() {
