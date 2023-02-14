@@ -1,3 +1,4 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable prettier/prettier */
 
 import {Suspense} from 'react';
@@ -65,6 +66,7 @@ function HomepageContent() {
       )}
       <Esencia />
       <Hero {...primaryHero} pickedByHand loading="eager" />
+      <Values {...primaryHero}/>
       <Process {...primaryHero} height="full" loading="eager" />
       {secondaryHero && <Hero {...secondaryHero} />}
       <FeaturedCollections
