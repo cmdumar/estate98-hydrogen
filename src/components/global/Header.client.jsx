@@ -143,7 +143,7 @@ function DesktopHeader({isHome, menu, openCart}) {
       <div className="flex justify-center w-full items-center mt-10">
         <Link className="font-bold mr-auto" to="/">
           <Image
-            src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/estate98-logo.png?v=1675426429"
+            src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/estate-logo-big.png?v=1675708323"
             alt="Logo"
             width={180}
             height={100}
