@@ -6,4 +6,5 @@ export {SectionOne} from './SectionOne.client';
 export {HowToUse} from './HowToUse';
 export {Recipes} from './Recipes';
 export {Values} from './Values.client';
-
+export {Journey} from './Journey.client';
+export {StorySection} from './StorySection.client';
