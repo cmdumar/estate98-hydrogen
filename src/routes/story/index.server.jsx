@@ -3,12 +3,22 @@
 
 import React from 'react'
 import {Layout} from '~/components/index.server';
+import { StorySection } from '../../components/index';
 import { Image } from '@shopify/hydrogen';
 
 function Story() {
+
+  // const [showStory, setShowStory] = useState(false);
+
+  // function story() {
+  //   setShowStory(true)
+  //   console.log("onclick",showStory)
+  // }
+
   return (
    <Layout bg="bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Esencia-bg-min.jpg?v=1675160778)]"  > 
-    <div className='
+   {/* <Journey /> */}
+    {/* <div className='
         min-h-screen
         bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero.jpg?v=1674774427)]
         bg-center
@@ -23,7 +33,8 @@ function Story() {
       <button className="inline-block  text-white rounded-lg text-center py-5 px-7 bg-[#AA3322]">
             BEGIN JOURNEY
       </button>
-    </div>
+    </div> */}
+    <StorySection />
 
     {/* first sectiion */}
     <div className="mt-24">
@@ -122,7 +133,6 @@ function Story() {
         <Image  className='my-24' src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable3-min.png?v=1676364829" width={`400`} height={`600`}/>
       </div>
     </div>
-
    </Layout>
   )
 }
