@@ -17,10 +17,11 @@ export function Process({
         bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Esencia-bg-min.jpg?v=1675160778)]
         bg-center
         bg-cover
+        pt-12
     `}>
         {/* video-grid */}
         <div className="max-w-7xl mx-auto pt-12">
-            <h1 className='text-center text-black font-alternate mb-10 text-5xl'>OUR PROCESS</h1>
+            <h1 className='text-center text-black font-alternate mb-24 text-5xl'>OUR PROCESS</h1>
             <div className="grid grid-cols-3 place-items-center grid-rows-3 gap-2">
                 <div className={`
                     relative
