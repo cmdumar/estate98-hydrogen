@@ -20,7 +20,7 @@ export function Hero({
           {!pickedByHand ? (
             <div
               className={`
-              bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero.jpg?v=1674774427)]
+              bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero_bg.jpg?v=1676983582)]
               bg-center
               bg-cover
               bg-no-repeat
