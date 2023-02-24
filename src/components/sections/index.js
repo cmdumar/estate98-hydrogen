@@ -8,3 +8,4 @@ export {Recipes} from './Recipes';
 export {Values} from './Values.client';
 export {Journey} from './Journey.client';
 export {StorySection} from './StorySection.client';
+export {ProcessContainer} from './ProcessContainer.client';

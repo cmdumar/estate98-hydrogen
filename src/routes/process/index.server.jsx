@@ -1,12 +1,12 @@
-import {StorySection} from '~/components';
+import {ProcessContainer} from '~/components';
 import {Layout} from '~/components/index.server';
 
-function Story() {
+function Process() {
   return (
     <Layout bg="bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Esencia-bg-min.jpg?v=1675160778)]">
-      <StorySection />
+      <ProcessContainer />
     </Layout>
   );
 }
 
-export default Story;
+export default Process;

@@ -12,9 +12,9 @@ export function Hero({
   return (
     <>
       <section
-        className={`relative flex flex-col w-full justify-center ${
-          top && '-mt-nav'
-        } h-screen`}
+        className={`relative flex flex-col w-full ${
+          pickedByHand ? 'justify-end' : 'justify-center'
+        } ${top && '-mt-nav'} h-screen`}
       >
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
           {!pickedByHand ? (
@@ -45,25 +45,27 @@ export function Hero({
         dark:from-contrast/60 
         dark:text-primary 
         from-primary/60 
-        text-contrast"
+        text-contrast mt-20"
           >
-            <div>
+            <div className="flex-1">
               {heading?.value && (
                 <Heading
                   format
                   as="h3"
                   size="display"
-                  className="max-w-md text-center drop-shadow-md"
+                  className="text-left drop-shadow-md font-alternate text-7xl uppercase w-fit ml-auto"
                 >
-                  Grown at peak elevation
+                  Grown at peak
+                  <br />
+                  elevation
                 </Heading>
               )}
             </div>
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center flex-2">
               <div className="">
                 {bottle?.reference && (
                   <Image
-                    className="block object-cover w-[250px]"
+                    className="block object-cover w-80"
                     data={bottle.reference.image}
                     loading={loading}
                   />
@@ -73,21 +75,23 @@ export function Hero({
                 Shop
               </button>
             </div>
-            <div>
+            <div className="flex-1">
               {heading?.value && (
                 <Heading
                   format
                   as="h3"
                   size="display"
-                  className="max-w-md text-center drop-shadow-md"
+                  className="text-left drop-shadow-md font-alternate text-7xl uppercase max-w-md w-full"
                 >
-                  On rich volcanic soil
+                  On rich
+                  <br />
+                  volcanic soil
                 </Heading>
               )}
             </div>
           </div>
         ) : (
-          <div className="flex justify-start gap-2 items-baseline">
+          <div className="flex justify-center gap-2 items-baseline pb-20">
             <div className="self-end">
               {stamp?.reference && (
                 <Image
@@ -102,11 +106,13 @@ export function Hero({
                 format
                 as="h3"
                 size="display"
-                className="text-left drop-shadow-md"
+                className="text-left drop-shadow-md font-alternate text-7xl uppercase"
               >
-                PICKED BY HAND FOR SIX GENERATIONS.
+                PICKED BY HAND
+                <br />
+                FOR SIX GENERATIONS.
               </Heading>
-              <button className="inline-block rounded-lg font-medium text-center mt-6 py-3 px-6 bg-[#AA3322]">
+              <button className="inline-block rounded-lg font-medium text-center mt-6 py-3 px-6 bg-[#AA3322] font-alternate">
                 Play The Visual Story
               </button>
             </div>
