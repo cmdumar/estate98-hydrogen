@@ -1,13 +1,11 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable prettier/prettier */
 
-import React from 'react'
 import { Video } from '@shopify/hydrogen';
 
 
 export function Process({ 
     video1,
-    // coffeebeverage
 }) {
 
 
