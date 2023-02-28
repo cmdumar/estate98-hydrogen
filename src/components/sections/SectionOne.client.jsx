@@ -23,7 +23,7 @@ export const SectionOne = () => {
         family
       </Heading>
 
-      <section className="flex justify-around px-10 max-w-[1380px mx-auto]">
+      <section className="flex justify-around px-10 max-w-[1380px]">
         <div className="w-3/5 flex flex-col justify-center items-center">
           <Image
             src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/bottle.png?v=1674795511"

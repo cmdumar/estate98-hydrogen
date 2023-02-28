@@ -13,7 +13,7 @@ const ImageCard = ({title, subtitle, imgUrl}) => (
       />
     </a>
     <figcaption
-      className={`flex justify-between items-center absolute px-4 py-6 w-full text-lg text-white bottom-0 backdrop-blur-md`}
+      className={`flex justify-between items-center absolute px-4 py-6 w-full text-lg text-white bottom-0 bg-gradient-to-t from-stone-700`}
     >
       <div>
         <Text className="font-alternate block font-medium text-3xl text-contrast">
@@ -34,9 +34,9 @@ export const Recipes = () => {
       className="
       flex
       justify-center
-      items-center bg-white"
+      items-center bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/how-to-bg.webp?v=1676027155)]"
     >
-      <Heading className="uppercase font-alternate text-contrast text-6xl text-center mb-10">
+      <Heading className="uppercase font-alternate text-black text-6xl text-center mb-10">
         Recipes
       </Heading>
       <section>
