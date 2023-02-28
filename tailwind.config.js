@@ -97,7 +97,19 @@ module.exports = {
             opacity: 1
           }
         },
-
+        grow: {
+          'from':{
+            transform: 'scaleY(0)'
+          }
+        },
+        fadeIn: {
+          '0%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 1,
+          },
+        }
       },
       animation: {
         'how1': 'how1 9s ease-in-out infinite',

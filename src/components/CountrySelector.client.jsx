@@ -50,7 +50,6 @@ export function CountrySelector() {
   return (
     <div className="relative">
       <Listbox onChange={setCountry}>
-        {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
         {({open}) => {
           setTimeout(() => setListboxOpen(open));
           return (
