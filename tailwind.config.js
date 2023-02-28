@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
 /* We  */
 /* Tailwind Configuration Docs: https://tailwindcss.com/docs/configuration */
 
@@ -14,6 +16,100 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        how1: {
+          '0%, 100%': {
+            opacity: 1,
+            transform: 'scale(1.1)'
+          },
+          '33%, 66%': {
+            opacity: 0.3,
+            transform: 'scale(1)'
+          },
+        },
+        how2: {
+          '0%, 66%, 100%': {
+            opacity: 0.3,
+            transform: 'scale(1)'
+          },
+          '33%': {
+            opacity: 1,
+            transform: 'scale(1.1)'
+          }
+        },
+        how3: {
+          '0%, 33%, 100%': {
+            opacity: 0.3,
+            transform: 'scale(1)'
+          },
+          '66%': {
+            opacity: 1,
+            transform: 'scale(1.1)'
+          }
+        },
+        round1: {
+          '0%, 100%': {
+            'border-right': '3px solid #973112',
+          },
+          '33%, 66%': {
+            'border-width': 0,
+          },
+        },
+        round2: {
+          '0%, 66%, 100%': {
+            'border-width': 0,
+          },
+          '33%': {
+            'border-right': '3px solid #973112',
+            'border-bottom': '3px solid #973112',
+          }
+        },
+        round3: {
+          '0%, 33%, 100%': {
+            'border-width': 0,
+          },
+          '66%': {
+            'border': '3px solid #973112',
+          }
+        },
+        image1: {
+          '0%, 100%': {
+            opacity: 1
+          },
+          '33%, 66%': {
+            opacity: 0
+          },
+        },
+        image2: {
+          '0%, 66%, 100%': {
+            opacity: 0,
+          },
+          '33%': {
+            opacity: 1,
+            transform: 1
+          }
+        },
+        image3: {
+          '0%, 33%, 100%': {
+            opacity: 0,
+          },
+          '66%': {
+            opacity: 1
+          }
+        },
+
+      },
+      animation: {
+        'how1': 'how1 9s ease-in-out infinite',
+        'how2': 'how2 9s ease-in-out infinite',
+        'how3': 'how3 9s ease-in-out infinite',
+        'round1': 'round1 9s ease-in-out infinite',
+        'round2': 'round2 9s ease-in-out infinite',
+        'round3': 'round3 9s ease-in-out infinite',
+        'image1': 'image1 9s ease-in-out infinite',
+        'image2': 'image2 9s ease-in-out infinite',
+        'image3': 'image3 9s ease-in-out infinite',
+      },
       colors: {
         primary: withOpacityValue('--color-primary'),
         contrast: withOpacityValue('--color-contrast'),
