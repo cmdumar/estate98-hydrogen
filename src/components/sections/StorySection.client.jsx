@@ -56,14 +56,14 @@ export function StorySection() {
               <p className="font-trixie text-2xl text-dark text-justify  [word-spacing:5px]">
                 Inspired by the history and the legacy of the Larin family, our
                 vision for the Estate 98 brand is centered around the coffee
-                itself - once known as "El Grano de Oro" (The Golden Bean) - and
-                its origin story with the magnificent Santa Ana volcano, where
-                coffee trees prosper and cherries are picked under the beaming
-                rays of the dry season in El Salvador. We framed this with an
-                arch, representing Gloria's gateway into her garden, the famous
-                Ruta de las Flores where everything grows. The sun and year it
-                all started is also represented in this illustration, with a
-                texture to represent the history.
+                itself - once known as &quot;El Grano de Oro&quot; (The Golden
+                Bean) - and its origin story with the magnificent Santa Ana
+                volcano, where coffee trees prosper and cherries are picked
+                under the beaming rays of the dry season in El Salvador. We
+                framed this with an arch, representing Gloria&apos;s gateway
+                into her garden, the famous Ruta de las Flores where everything
+                grows. The sun and year it all started is also represented in
+                this illustration, with a texture to represent the history.
                 <br />
                 <br />
                 We paired this illustration with a bold, legacy-driven wordmark
@@ -137,10 +137,10 @@ export function StorySection() {
             </p>
             <br />
             <p className="font-trixie text-2xl text-dark text-justify  [word-spacing:5px]">
-              Experience the difference with Estate98 coffee. Whether you're a
-              coffee connoisseur or just looking for a delicious and guilt-free
-              cup of joe, we've got you covered. Thank you for choosing
-              Estate98.
+              Experience the difference with Estate98 coffee. Whether
+              you&apos;re a coffee connoisseur or just looking for a delicious
+              and guilt-free cup of joe, we&apos;ve got you covered. Thank you
+              for choosing Estate98.
             </p>
           </div>
 
