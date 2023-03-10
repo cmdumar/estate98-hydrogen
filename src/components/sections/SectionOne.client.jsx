@@ -91,21 +91,21 @@ export const SectionOne = () => {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <p
+                <button
                   className="text-theme text-4xl font-trixie cursor-pointer"
                   onClick={() => setCounter(counter - 1)}
                 >
                   -
-                </p>
+                </button>
                 <div className="bg-[#EEE] px-6 rounded-lg py-1 text-black font-trixie">
                   {counter}
                 </div>
-                <p
+                <button
                   className="text-theme text-4xl font-trixie cursor-pointer"
                   onClick={() => setCounter(counter + 1)}
                 >
                   +
-                </p>
+                </button>
               </div>
             </div>
 

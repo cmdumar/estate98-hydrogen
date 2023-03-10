@@ -1,12 +1,28 @@
 import {Suspense} from 'react';
-import {gql, Seo} from '@shopify/hydrogen';
+import {gql, Seo, useRouteParams, useShopQuery} from '@shopify/hydrogen';
 
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {SectionOne, HowToUse, Recipes} from '~/components';
 import {Layout} from '~/components/index.server';
 
+import {MEDIA_FRAGMENT} from '~/lib/fragments';
+
 export default function AllProducts() {
+  const {handle} = useRouteParams();
+
+  // const {
+  //   data: {product, shop},
+  // } = useShopQuery({
+  //   query: PRODUCT_QUERY,
+  //   variables: {
+  //     handle,
+  //   },
+  //   preload: true,
+  // });
+
+  console.log('Handle', handle);
+
   return (
     <Layout bg="bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Esencia-bg-min.jpg?v=1675160778)]">
       <Seo type="page" data={{title: 'All Products'}} />
@@ -62,6 +78,70 @@ const PAGINATE_ALL_PRODUCTS_QUERY = gql`
       pageInfo {
         hasNextPage
         endCursor
+      }
+    }
+  }
+`;
+
+const PRODUCT_QUERY = gql`
+  ${MEDIA_FRAGMENT}
+  query Product($handle: String!)
+  @inContext(country: $country, language: $language) {
+    product(handle: $handle) {
+      id
+      title
+      vendor
+      descriptionHtml
+      media(first: 7) {
+        nodes {
+          ...Media
+        }
+      }
+      productType
+      variants(first: 100) {
+        nodes {
+          id
+          availableForSale
+          selectedOptions {
+            name
+            value
+          }
+          image {
+            id
+            url
+            altText
+            width
+            height
+          }
+          priceV2 {
+            amount
+            currencyCode
+          }
+          compareAtPriceV2 {
+            amount
+            currencyCode
+          }
+          sku
+          title
+          unitPrice {
+            amount
+            currencyCode
+          }
+        }
+      }
+      seo {
+        description
+        title
+      }
+    }
+    shop {
+      shippingPolicy {
+        body
+        handle
+      }
+      refundPolicy {
+        body
+        handle
       }
     }
   }
