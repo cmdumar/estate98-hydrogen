@@ -1,5 +1,10 @@
 import {Suspense} from 'react';
-import {gql, Seo, useRouteParams, useShopQuery} from '@shopify/hydrogen';
+import {
+  gql,
+  Seo,
+  useShopQuery,
+  ProductOptionsProvider,
+} from '@shopify/hydrogen';
 
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
@@ -9,26 +14,24 @@ import {Layout} from '~/components/index.server';
 import {MEDIA_FRAGMENT} from '~/lib/fragments';
 
 export default function AllProducts() {
-  const {handle} = useRouteParams();
-
-  // const {
-  //   data: {product, shop},
-  // } = useShopQuery({
-  //   query: PRODUCT_QUERY,
-  //   variables: {
-  //     handle,
-  //   },
-  //   preload: true,
-  // });
-
-  console.log('Handle', handle);
+  const {
+    data: {product, shop},
+  } = useShopQuery({
+    query: PRODUCT_QUERY,
+    variables: {
+      handle: 'original-bottle',
+    },
+    preload: true,
+  });
 
   return (
     <Layout bg="bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Esencia-bg-min.jpg?v=1675160778)]">
       <Seo type="page" data={{title: 'All Products'}} />
       <section>
         <Suspense>
-          <SectionOne />
+          <ProductOptionsProvider data={product}>
+            <SectionOne />
+          </ProductOptionsProvider>
           <HowToUse />
           <Recipes />
         </Suspense>
@@ -85,8 +88,7 @@ const PAGINATE_ALL_PRODUCTS_QUERY = gql`
 
 const PRODUCT_QUERY = gql`
   ${MEDIA_FRAGMENT}
-  query Product($handle: String!)
-  @inContext(country: $country, language: $language) {
+  query Product($handle: String!) {
     product(handle: $handle) {
       id
       title

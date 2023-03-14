@@ -1,11 +1,23 @@
 import {Image} from '@shopify/hydrogen';
 import {Heading, Text} from '~/components';
 import {useState} from 'react';
+import {useProductOptions, AddToCartButton} from '@shopify/hydrogen';
 
 export const SectionOne = () => {
   const [sub, setSub] = useState(true);
   const [counter, setCounter] = useState(0);
   let price = 450;
+
+  const {
+    // options,
+    // setSelectedOption,
+    // selectedOptions,
+    selectedVariant,
+    // selectedSellingPlan,
+    // sellingPlanGroups,
+  } = useProductOptions();
+
+  // console.log('Selected Variant', sellingPlanGroups);
 
   return (
     <section className="mt-10">
@@ -138,9 +150,18 @@ export const SectionOne = () => {
             </div>
 
             <div>
-              <button className="bg-theme text-3xl text-white px-6 py-4 font-alternate w-full rounded-lg mt-7">
-                {sub ? `SUBSCRIBE` : `BUY`}
-              </button>
+              <AddToCartButton
+                variantId={selectedVariant?.id}
+                // sellingPlanId
+                quantity={1}
+                accessibleAddingToCartLabel="Adding item to your cart"
+                // disabled={isOutOfStock}
+                type="button"
+              >
+                <button className="bg-theme text-3xl text-white px-6 py-4 font-alternate w-full rounded-lg mt-7">
+                  {sub ? `SUBSCRIBE` : `BUY`}
+                </button>
+              </AddToCartButton>
             </div>
           </div>
         </div>
