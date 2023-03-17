@@ -13,11 +13,11 @@ export const SectionOne = () => {
     // setSelectedOption,
     // selectedOptions,
     selectedVariant,
-    // selectedSellingPlan,
-    // sellingPlanGroups,
+    selectedSellingPlan,
+    sellingPlanGroups,
   } = useProductOptions();
 
-  // console.log('Selected Variant', sellingPlanGroups);
+  console.log('Selected Variant', sellingPlanGroups);
 
   return (
     <section className="mt-10">

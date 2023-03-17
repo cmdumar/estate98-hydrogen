@@ -1,4 +1,4 @@
-import {Link, useUrl, Image} from '@shopify/hydrogen';
+import {Link, useUrl, Image, useCart} from '@shopify/hydrogen';
 import {useWindowScroll} from 'react-use';
 
 import {
@@ -166,6 +166,7 @@ function DesktopHeader({isHome, menu, openCart}) {
         <div className="flex items-center gap-1 ml-auto">
           <button onClick={openCart} className={styles.button}>
             <IconCartBag fill="none" viewBox="0 0 24 24" />
+            <CartBadge />
           </button>
           <p className="font-alternate uppercase text-2xl border-b-2 border-b-[#B59357]">
             Returning customers
@@ -173,5 +174,24 @@ function DesktopHeader({isHome, menu, openCart}) {
         </div>
       </div>
     </header>
+  );
+}
+
+function CartBadge({dark}) {
+  const {totalQuantity} = useCart();
+
+  if (totalQuantity < 1) {
+    return null;
+  }
+  return (
+    <div
+      className={`${
+        dark
+          ? 'text-primary bg-contrast dark:text-contrast dark:bg-primary'
+          : 'text-contrast bg-primary'
+      } absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px`}
+    >
+      <span>{totalQuantity}</span>
+    </div>
   );
 }
