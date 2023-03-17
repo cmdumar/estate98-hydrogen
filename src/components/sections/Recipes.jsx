@@ -32,7 +32,7 @@ export const Recipes = () => {
   return (
     <Section
       className="
-      mt-20
+      my-20
       flex
       justify-center
       items-center bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/how-to-bg.webp?v=1676027155)]"

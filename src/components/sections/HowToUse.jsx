@@ -5,6 +5,7 @@ export const HowToUse = () => {
   return (
     <Section
       className="
+      mt-20
       flex
       justify-center bg-contain bg-no-repeat bg-right-bottom
       items-center bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/how-to-bg.webp?v=1676027155)]"

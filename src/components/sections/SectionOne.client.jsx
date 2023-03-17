@@ -45,7 +45,7 @@ export const SectionOne = () => {
           </Text>
         </div>
         {/* right side */}
-        <div className="w-full md:w-[600px]">
+        <div className="w-full md:w-[500px]">
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow text-contrast mt-20">
             {/* subscription tab */}
             <div className="flex font-alternate text-2xl w-full text-white rounded-[24px] text-center cursor-pointer">

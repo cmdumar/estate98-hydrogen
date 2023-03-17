@@ -41,19 +41,22 @@ export function StorySection() {
 
         {/* first sectiion */}
         <div className="mt-24">
-          <div className="max-w-full px-20 flex gap-8">
-            <div className="basis-2/5">
+          <div className="px-4 lg:flex lg:px-20 gap-8">
+            <h1 className="text-dark font-alternate my-8 text-5xl text-center underline underline-offset-[10px] decoration-[6px] decoration-theme lg:hidden">
+              THE GOLDEN BEAN
+            </h1>
+            <div className="flex justify-center lg:w-2/5 lg:block">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Story_sec1.png?v=1676315988"
-                width={`600`}
-                height={`800`}
+                width={`800`}
+                height={`1000`}
               />
             </div>
-            <div className="basis-3/5 px-7">
-              <h1 className="text-dark font-alternate my-8 text-6xl underline underline-offset-[10px] decoration-[6px] decoration-theme">
+            <div className="lg:w-3/5 px-7">
+              <h1 className="text-dark font-alternate my-8 text-6xl underline underline-offset-[10px] decoration-[6px] decoration-theme hidden lg:block">
                 THE GOLDEN BEAN
               </h1>
-              <p className="font-trixie text-2xl text-dark text-justify  [word-spacing:5px]">
+              <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  lg:[word-spacing:5px]">
                 Inspired by the history and the legacy of the Larin family, our
                 vision for the Estate 98 brand is centered around the coffee
                 itself - once known as &quot;El Grano de Oro&quot; (The Golden
@@ -77,7 +80,7 @@ export function StorySection() {
                 with hints of gold and red, a metaphor for the golden bean, a
                 prosperous future, and the heart of its people.
               </p>
-              <p className="text-dark font-alternate my-8 text-2xl underline underline-offset-[10px] decoration-[6px] decoration-theme">
+              <p className="text-dark text-center font-alternate my-8 text-2xl underline underline-offset-[10px] decoration-[6px] decoration-theme">
                 WRITE TO US
               </p>
             </div>
@@ -85,19 +88,25 @@ export function StorySection() {
         </div>
 
         {/* second section */}
-        <div className="max-w-full px-20 mt-36 flex gap-20">
-          <div className="basis-3/5">
-            <h1 className="text-dark font-alternate my-8 text-6xl underline underline-offset-[10px] decoration-[6px] decoration-theme">
+        <div className="max-w-full px-7 lg:px-16 my-36 lg:flex lg:justify-center">
+          <div className="md:basis-3/5">
+            <h1 className="text-dark font-alternate mt-8 mb-10 text-5xl text-center underline underline-offset-[10px] decoration-[6px] decoration-theme">
               SUSTAINABLY GROWN
             </h1>
-            <p className="font-trixie text-2xl text-dark text-justify [word-spacing:5px]">
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               At Estate98, we are dedicated to producing the highest quality
               coffee while minimizing our environmental impact. Our beans are
               grown on a small, family-owned estate that prioritizes sustainable
               farming practices.
             </p>
             <br />
-            <p className="font-trixie text-2xl text-dark text-justify [word-spacing:5px]">
+            <Image
+              className="my-10 mx-auto lg:hidden"
+              src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable1-min.png?v=1676364830"
+              width={`300`}
+              height={`500`}
+            />
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               We believe in transparency and traceability in the coffee supply
               chain. At Estate98, we are proud to operate a regenerative farm at
               our coffee estate. Regenerative agriculture is a holistic approach
@@ -105,7 +114,7 @@ export function StorySection() {
               the soil, rather than just maximizing yields.
             </p>
             <br />
-            <p className="font-trixie text-2xl text-dark text-justify [word-spacing:5px]">
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               By using techniques such as cover cropping, composting, and
               holistic grazing, we are able to improve the overall health and
               fertility of the soil on our farm. This not only helps us grow
@@ -114,20 +123,32 @@ export function StorySection() {
               improving water retention, and increasing biodiversity.
             </p>
             <br />
-            <p className="font-trixie text-2xl text-dark text-justify [word-spacing:5px]">
+            <Image
+              className="my-10 mx-auto lg:hidden"
+              src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable2-min.png?v=1676364829"
+              width={`300`}
+              height={`500`}
+            />
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               Our regenerative farm is just one aspect of our commitment to
               sustainability. We believe that by taking care of the land and
               working in harmony with nature, we can produce the highest quality
               coffee while also being good stewards of the environment.
             </p>
             <br />
-            <p className="font-trixie text-2xl text-dark text-justify [word-spacing:5px]">
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               By working directly with the source, we can ensure that our coffee
               is not only delicious, but also grown with respect for the land
               and the people who tend it.
             </p>
             <br />
-            <p className="font-trixie text-2xl text-dark text-justify [word-spacing:5px]">
+            <Image
+              className="my-10 mx-auto lg:hidden"
+              src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable3-min.png?v=1676364829"
+              width={`300`}
+              height={`500`}
+            />
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               In addition to our commitment to sustainability, we are also
               passionate about giving back to the communities where our coffee
               is grown. We support local initiatives such as education and
@@ -136,7 +157,7 @@ export function StorySection() {
               and their communities.
             </p>
             <br />
-            <p className="font-trixie text-2xl text-dark text-justify  [word-spacing:5px]">
+            <p className="font-trixie text-lg  mt-6 md:text-2xl text-dark text-center md:text-justify  md:[word-spacing:5px]">
               Experience the difference with Estate98 coffee. Whether
               you&apos;re a coffee connoisseur or just looking for a delicious
               and guilt-free cup of joe, we&apos;ve got you covered. Thank you
@@ -144,24 +165,24 @@ export function StorySection() {
             </p>
           </div>
 
-          <div className="basis-2/5 pl-32">
+          <div className="hidden lg:basis-2/5 lg:flex lg:flex-col lg:items-center lg:justify-center">
             <Image
-              className="my-24"
+              className="my-20"
               src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable1-min.png?v=1676364830"
-              width={`400`}
-              height={`600`}
+              width={`300`}
+              height={`500`}
             />
             <Image
-              className="my-24"
+              className="my-20"
               src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable2-min.png?v=1676364829"
-              width={`400`}
-              height={`600`}
+              width={`300`}
+              height={`500`}
             />
             <Image
-              className="my-24"
+              className="my-20"
               src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/sustainable3-min.png?v=1676364829"
-              width={`400`}
-              height={`600`}
+              width={`300`}
+              height={`500`}
             />
           </div>
         </div>
