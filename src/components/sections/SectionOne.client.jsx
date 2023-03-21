@@ -8,16 +8,8 @@ export const SectionOne = () => {
   const [counter, setCounter] = useState(0);
   let price = 450;
 
-  const {
-    // options,
-    // setSelectedOption,
-    // selectedOptions,
-    selectedVariant,
-    // selectedSellingPlan,
-    // sellingPlanGroups,
-  } = useProductOptions();
-
-  // console.log('Selected Variant', sellingPlanGroups);
+  const {selectedVariant, sellingPlanGroups, selectedSellingPlanAllocation} =
+    useProductOptions();
 
   return (
     <section className="mt-20 grid place-items-center">
@@ -49,19 +41,17 @@ export const SectionOne = () => {
           <div className="p-6 bg-white border border-gray-200 rounded-lg shadow text-contrast mt-20">
             {/* subscription tab */}
             <div className="flex font-alternate text-2xl w-full text-white rounded-[24px] text-center cursor-pointer">
-              <div
+              <button
                 className={
                   sub
                     ? ` relative flex-1 rounded-l-lg bg-[#B59357] p-4`
                     : ` rounded-l-lg relative flex-1 bg-[#EEE] text-[#B59357] p-4`
                 }
-                role="button"
-                tabIndex={0}
                 onClick={() => setSub(true)}
                 onKeyUp={() => {}}
               >
                 SUBSCRIPTION
-                <div
+                <span
                   className={
                     sub
                       ? `bg-theme text-sm rounded px-1 py-[3px] absolute right-[2%] top-1 text-white`
@@ -69,21 +59,19 @@ export const SectionOne = () => {
                   }
                 >
                   SAVE 10%
-                </div>
-              </div>
-              <div
+                </span>
+              </button>
+              <button
                 className={
                   sub
                     ? `flex-1 bg-[#EEE] rounded-r-lg text-[#B59357] p-4`
                     : ` rounded-r-lg flex-1 bg-[#B59357] p-4`
                 }
-                role="button"
-                tabIndex={0}
                 onClick={() => setSub(false)}
                 onKeyUp={() => {}}
               >
                 ONE-TIME
-              </div>
+              </button>
             </div>
 
             <p
@@ -155,15 +143,19 @@ export const SectionOne = () => {
               <AddToCartButton
                 className="w-full"
                 variantId={selectedVariant?.id}
-                // sellingPlanId
-                quantity={1}
+                sellingPlanId={
+                  sub
+                    ? selectedVariant.sellingPlanAllocations.nodes[0]
+                        .sellingPlan.id
+                    : null
+                }
+                quantity={counter}
                 accessibleAddingToCartLabel="Adding item to your cart"
-                // disabled={isOutOfStock}
+                disabled={counter == 0}
                 type="button"
+                className="bg-theme text-3xl text-white px-6 py-4 font-alternate w-full rounded-lg mt-7"
               >
-                <button className="bg-theme text-3xl text-white px-6 py-4 font-alternate w-full rounded-lg mt-7">
-                  {sub ? `SUBSCRIBE` : `BUY`}
-                </button>
+                {sub ? `SUBSCRIBE` : `BUY`}
               </AddToCartButton>
             </div>
           </div>

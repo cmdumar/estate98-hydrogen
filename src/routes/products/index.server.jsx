@@ -15,7 +15,7 @@ import {MEDIA_FRAGMENT} from '~/lib/fragments';
 
 export default function AllProducts() {
   const {
-    data: {product, shop},
+    data: {product},
   } = useShopQuery({
     query: PRODUCT_QUERY,
     variables: {
@@ -93,6 +93,17 @@ const PRODUCT_QUERY = gql`
       id
       title
       vendor
+      onlineStoreUrl
+      sellingPlanGroups(first: 1) {
+        nodes {
+          name
+          sellingPlans(first: 1) {
+            nodes {
+              id
+            }
+          }
+        }
+      }
       descriptionHtml
       media(first: 7) {
         nodes {
@@ -104,6 +115,13 @@ const PRODUCT_QUERY = gql`
         nodes {
           id
           availableForSale
+          sellingPlanAllocations(first: 10) {
+            nodes {
+              sellingPlan {
+                id
+              }
+            }
+          }
           selectedOptions {
             name
             value
@@ -134,16 +152,6 @@ const PRODUCT_QUERY = gql`
       seo {
         description
         title
-      }
-    }
-    shop {
-      shippingPolicy {
-        body
-        handle
-      }
-      refundPolicy {
-        body
-        handle
       }
     }
   }
