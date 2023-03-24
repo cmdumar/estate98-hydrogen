@@ -9,3 +9,4 @@ export {Values} from './Values.client';
 export {Journey} from './Journey.client';
 export {StorySection} from './StorySection.client';
 export {ProcessContainer} from './ProcessContainer.client';
+export {RecipeSection} from './RecipeSection.client';

@@ -55,7 +55,7 @@ export function ProcessContainer() {
               </p>
             </div>
 
-            <div className="relative animate-[fadeIn_6s]">
+            <div className="relative mb-10 animate-[fadeIn_6s]">
               <p className="md:absolute font-trixie text-[#973122] text-2xl -left-48">
                 1.5 day(s)
               </p>
