@@ -133,7 +133,9 @@ shop-pay-button {
       }
     }
   }
-
+  .circle {
+    backdrop-filter: blur(12px);
+  }
   .swimlane {
     @apply grid snap-mandatory grid-flow-col snap-x w-full gap-4 scroll-px-6 px-6 pb-4 overflow-x-scroll justify-start;
   }
