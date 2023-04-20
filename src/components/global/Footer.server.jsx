@@ -33,10 +33,10 @@ export function Footer({menu}) {
       <section className="md:grid gap-4 w-full md:max-w-[335px] justify-self-start">
         <Heading
           size="lead"
-          className="cursor-default text-center mb-5 md:text-start text-3xl font-alternate"
+          className="cursor-default  mb-5 text-center lg:text-left ml-1 text-3xl font-alternate"
           as="h3"
         >
-          Join La Famila
+          <span className="text-theme">Join</span> La Famila
         </Heading>
         <div className="flex flex-col items-center lg:flex-row lg:items-center mb-8">
           <input
@@ -57,12 +57,12 @@ export function Footer({menu}) {
         </div>
         <Heading
           size="lead"
-          className="cursor-default text-center mb-5 text-3xl font-alternate"
+          className="cursor-default text-center lg:text-left ml-1  mb-5 text-3xl font-alternate"
           as="h3"
         >
-          Follow us
+          <span className="text-theme">Follow</span> us
         </Heading>
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center lg:justify-start gap-4">
           <div className="border-2 rounded-full p-4 cursor-pointer hover:scale-105">
             <IconInstagram fill="none" viewBox="0 0 24 24" />
           </div>
