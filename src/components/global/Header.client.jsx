@@ -83,9 +83,9 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
           action={`/${countryCode ? countryCode + '/' : ''}search`}
           className="items-center gap-2 sm:flex"
         >
-          <button type="submit" className={styles.button}>
+          {/* <button type="submit" className={styles.button}>
             <IconSearch />
-          </button>
+          </button> */}
           <Input
             className={
               isHome
@@ -110,11 +110,11 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
-        <Link to={'/account'} className={styles.button}>
+        {/* <Link to={'/account'} className={styles.button}>
           <IconAccount />
-        </Link>
+        </Link> */}
         <button onClick={openCart} className={styles.button}>
-          <div className="border-2 rounded-full p-4">
+          <div className="border-2 rounded-full p-2">
             <IconCartBag fill="none" viewBox="0 0 24 24" />
           </div>
         </button>

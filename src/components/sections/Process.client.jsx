@@ -16,18 +16,20 @@ export function Process({video1}) {
         <h1 className="text-center text-black font-alternate mb-24 text-5xl">
           OUR PROCESS
         </h1>
-        <div className="grid grid-cols-3 place-items-center grid-rows-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 place-items-center sm:grid-rows-3 gap-2">
           <div
             className={`
+                    bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/process-2.jpg?v=1675417854)]
                     relative
                     grayscale 
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700 
                     order-1
+                    min-h-[220px] w-full
                 `}
           >
-            <Video
+            {/* <Video
               className="w-full h-full"
               data={video1.reference}
               controls={false}
@@ -35,7 +37,7 @@ export function Process({video1}) {
               onMouseOut={(event) => event.target.pause()}
               playsInline={true}
               muted={true}
-            />
+            /> */}
             <p className="w-8 h-8 rounded-full absolute top-1 left-1 z-10 bg-white text-center text-[#AA3322] flex items-center justify-center mt-1 ml-1">
               1
             </p>
@@ -49,17 +51,18 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    min-h-full w-full
-                    row-span-2
+                    min-h-[220px] w-full
+                     fgfeh mnje4brow-span-2
                     order-2
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               2
             </p>
           </div>
           <div
             className={`
+                    w-full min-h-[220px]
                     bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/process-3.jpg?v=1675386917)]
                     bg-center
                     bg-cover
@@ -67,11 +70,10 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    min-h-full w-full 
                     order-3
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               3
             </p>
           </div>
@@ -84,11 +86,11 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    min-h-full w-full
+                    min-h-[220px] w-full
                     order-5
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               4
             </p>
           </div>
@@ -101,11 +103,11 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    min-h-full w-full
+                    min-h-[220px] w-full
                     order-4
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               5
             </p>
           </div>
@@ -118,11 +120,11 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    min-h-full w-full
+                    min-h-[220px] w-full
                     order-6
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               6
             </p>
           </div>
@@ -135,11 +137,11 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    min-h-full w-full
+                    min-h-[220px] w-full
                     order-7
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               7
             </p>
           </div>
@@ -152,11 +154,11 @@ export function Process({video1}) {
                     rounded-none
                     transition all
                     hover:grayscale-0 duration-700
-                    h-64 w-full max-w-lg
+                    min-h-[220px] w-full
                     order-8
                 `}
           >
-            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center justify-center mt-1 ml-1">
+            <p className="w-8 h-8 rounded-full bg-white text-center flex items-center text-[#AA3322] justify-center mt-1 ml-1">
               8
             </p>
           </div>
@@ -168,7 +170,7 @@ export function Process({video1}) {
 
       {/* farm-to-glass */}
       <div className="max-w-7xl mx-auto py-20">
-        <div className="flex justify-around gap-10 flex-wrap">
+        <div className="flex justify-around gap-5 flex-wrap px-4">
           <div
             className={`
                     bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/farm.jpg?v=1675393004)]
@@ -177,9 +179,9 @@ export function Process({video1}) {
                     grayscale
                     transition all
                     hover:grayscale-0 duration-700
-                    w-[565px] h-[410px] max-w-lg flex justify-center items-center`}
+                    min-h-[350px] w-[420px] md:w-[560px] flex justify-center items-center`}
           >
-            <p className="text-white text-7xl font-alternate ">FROM OUR FORM</p>
+            <p className="text-white text-5xl md:text-7xl font-alternate ">FROM OUR FORM</p>
           </div>
           <div
             className={`
@@ -189,9 +191,9 @@ export function Process({video1}) {
                     grayscale
                     transition-all
                     hover:grayscale-0 duration-700
-                    w-[565px] h-[410px] max-w-lg flex justify-center items-center`}
+                    min-h-[350px] w-[420px] md:w-[560px] flex justify-center items-center`}
           >
-            <p className="text-white text-7xl font-alternate ">TO YOUR GLASS</p>
+            <p className="text-white text-5xl md:text-7xl font-alternate ">TO YOUR GLASS</p>
           </div>
         </div>
 
