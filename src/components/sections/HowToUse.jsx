@@ -63,7 +63,7 @@ export const HowToUse = () => {
             width={350}
             height={650}
           />
-          <Text className="font-alternate text-center text-2xl pb-2 border-b-4 border-b-[#973122] text-black absolute -bottom-6 cursor-pointer ">
+          <Text className="font-alternate text-center text-2xl pb-2 border-b-4 border-b-[#973122] text-black absolute -bottom-2 cursor-pointer ">
             ORDER YOUR FIRST SAMPLE
           </Text>
         </div>

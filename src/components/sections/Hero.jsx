@@ -14,7 +14,7 @@ export function Hero({
       <section
         className={`relative flex flex-col w-full ${
           pickedByHand ? 'justify-end' : 'justify-center'
-        } ${top && '-mt-nav'} h-screen`}
+        } ${top && '-mt-nav'} min-h-screen`}
       >
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
           {!pickedByHand ? (
@@ -23,8 +23,8 @@ export function Hero({
               bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/Hero_bg.jpg?v=1676983582)]
               bg-center
               bg-cover
-              bg-no-repeat
-              h-screen`}
+              min-h-screen
+              `}
             ></div>
           ) : (
             <div
@@ -32,14 +32,15 @@ export function Hero({
             bg-[url(https://cdn.shopify.com/s/files/1/0712/2793/2978/files/pickedByHand.jpg?v=1674826797)]
             bg-center
             bg-cover
-            bg-no-repeat
-            h-screen`}
+            min-h-screen`}
             ></div>
           )}
         </div>
         {!pickedByHand ? (
           <div
             className="flex
+        flex-col
+        md:flex-row    
         justify-center
         items-center
         dark:from-contrast/60 
@@ -53,7 +54,7 @@ export function Hero({
                   format
                   as="h3"
                   size="display"
-                  className="text-left drop-shadow-md font-alternate text-7xl uppercase w-fit ml-auto"
+                  className="text-center drop-shadow-md font-alternate text-6xl md:text-7xl uppercase w-fit ml-auto md:justify-items-end"
                 >
                   Grown at peak
                   <br />
@@ -71,7 +72,7 @@ export function Hero({
                   />
                 )}
               </div>
-              <button className="inline-block rounded-lg font-medium text-center py-3 px-6 bg-[#AA3322]">
+              <button className="inline-block mb-5 rounded-lg font-medium text-center py-3 px-8 bg-[#AA3322]">
                 Shop
               </button>
             </div>
@@ -81,7 +82,7 @@ export function Hero({
                   format
                   as="h3"
                   size="display"
-                  className="text-left drop-shadow-md font-alternate text-7xl uppercase max-w-md w-full"
+                  className="text-center drop-shadow-md font-alternate text-6xl md:text-7xl uppercase max-w-md w-full mb-10 md:mb-0"
                 >
                   On rich
                   <br />
@@ -91,11 +92,11 @@ export function Hero({
             </div>
           </div>
         ) : (
-          <div className="flex justify-center gap-2 items-baseline pb-20">
+          <div className="md:flex justify-center gap-2 items-baseline pb-20">
             <div className="self-end">
               {stamp?.reference && (
                 <Image
-                  className="block object-cover w-[250px]"
+                  className="block object-cover w-[150px] ml-6 md:ml-0 md:w-[250px]"
                   data={stamp.reference.image}
                   loading={loading}
                 />

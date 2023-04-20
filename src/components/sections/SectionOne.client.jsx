@@ -22,21 +22,22 @@ export const SectionOne = () => {
   return (
     <>
       <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
-      <section className="mt-10">
-        <Heading className="font-alternate text-6xl text-center text-black uppercase mb-16">
+      <section className="mt-20 grid place-items-center">
+        <Heading className="font-alternate text-center text-black uppercase mb-16 sm:text-6xl text-3xl">
           Come, become a <span style={{color: '#973122'}}>part</span> of our
           family
         </Heading>
 
-        <section className="flex justify-around px-10 max-w-[1380px]">
-          <div className="w-3/5 flex flex-col justify-center items-center">
+        <section className="px-3 w-full flex flex-col items-center mx-auto lg:flex-row justify-around gap-10 max-w-[1380px]">
+          {/* left side */}
+          <div className="grid place-items-center md:flex flex-col justify-center items-center">
             <Image
               src="https://cdn.shopify.com/s/files/1/0712/2793/2978/files/bottle.png?v=1674795511"
               alt="Coffee bottle"
               width={220}
               height={300}
             />
-            <Text className="font-trixie px-20 pt-6 text-black text-justify text-xl">
+            <Text className="font-trixie pt-6 text-black text-justify text-xl w-10/12">
               Inspired by the history and the legacy of the Larin family, our
               vision for the Estate 98 brand is centered around the coffee
               itself - once known as &quot;El Grano de Oro&quot; (The Golden
@@ -45,8 +46,8 @@ export const SectionOne = () => {
               the beaming rays of the dry season in El Salvador.
             </Text>
           </div>
-          <div className="w-2/5">
-            <div className="max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow text-contrast mt-20">
+          <div className="w-full md:w-[600px]">
+            <div className="p-6 bg-white border border-gray-200 rounded-lg shadow text-contrast mt-20">
               {/* subscription tab */}
               <div className="flex font-alternate text-2xl w-full text-white rounded-[24px] text-center cursor-pointer">
                 <button
@@ -62,8 +63,8 @@ export const SectionOne = () => {
                   <span
                     className={
                       sub
-                        ? `bg-theme text-sm rounded px-1 py-[3px] absolute right-[2%] top-1 text-white`
-                        : `bg-theme py-[2px] text-white text-sm rounded px-1 absolute right-[2%] top-1`
+                        ? `bg-theme md:text-sm text-xs  rounded px-1 py-[2px] absolute right-[2%] top-1 text-white`
+                        : `bg-theme py-[2px] text-white md:text-sm text-xs rounded px-1 absolute right-[2%] top-1`
                     }
                   >
                     SAVE 10%
@@ -142,7 +143,7 @@ export const SectionOne = () => {
                   className="w-3/4 bg-[#EEE] px-6 font-trixie text-base rounded-lg h-14"
                   placeholder="Enter coupon code.."
                 />
-                <button className="bg-[#B59357] h-14 w-1/4 rounded-lg ">
+                <button className="bg-[#B59357] h-14 w-1/4 text-white rounded-lg ">
                   Apply
                 </button>
               </div>

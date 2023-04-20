@@ -9,10 +9,10 @@ export function Esencia() {
     h-screen`}
     >
       <div className="max-w-2xl h-screen m-auto flex flex-col justify-center items-center gap-20">
-        <h1 className="text-center text-black font-bold text-6xl tracking-wider font-alternate">
+        <h1 className="text-center text-black font-bold text-5xl md:text-6xl tracking-wider font-alternate">
           ESENCIA DE CAFÉ
         </h1>
-        <p className="text-left text-black text-2xl font-trixie ">
+        <p className="md:text-left text-black text-2xl font-trixie px-4 text-center ">
           Inspired by the history and the legacy of the Larin family, our vision
           for the Estate 98 brand is centered around the coffee itself - once
           known as &quot;El Grano de Oro&quot; (The Golden Bean) - and its
